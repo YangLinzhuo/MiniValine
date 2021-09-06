@@ -61,6 +61,7 @@
     "css-loader": "^4.0.0",
     "fibers": "^5.0.0",
     "leancloud-storage": "^4.6.1",
+    "request": "^2.88.2",
     "snyk": "^1.348.1",
     "source-map": "^0.7.0",
     "string-format": "^2.0.0"

@@ -18,5 +18,7 @@ const Config = function (root) {
   root.C = C
   root.C.url = root.config.pathname || location.pathname || '/'
   root.role = root.config.role ? root.config.role : 'admin'
+
+  root.sendKey = root.config.sendKey
 }
 module.exports = Config

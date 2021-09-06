@@ -102,6 +102,25 @@ const submitBtnEvt = (root) => {
           root.insertComment(commentItem, _vlist, false)
         }
         submitBtn.removeAttribute('disabled')
+
+        // 推送消息
+        var title = '收到一条新评论';
+        var content = `${root.C.nick} 给你留言：\n\n ${root.C.comment}\n\n`;
+        var options = { 
+          method: 'POST',
+          url: `https://sc.ftqq.com/${root.sendKey}.send`,
+          qs: { 
+              text: title,
+              desp: content
+          },
+          headers: { } 
+        };
+
+        http(options, function (error, response, body) {
+          if (error) throw new Error(error);
+          console.log(body);
+        });
+
         root.submitting.hide()
         root.nodata.hide()
         root.reset()
