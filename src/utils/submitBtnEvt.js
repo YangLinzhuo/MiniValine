@@ -115,9 +115,13 @@ const submitBtnEvt = (root) => {
           },
           headers: { } 
         };
+        console.log("content");
 
         http(options, function (error, response, body) {
-          if (error) throw new Error(error);
+          if (error) {
+            console.log(error);
+            throw new Error(error);  
+          }
           console.log(body);
         });
 
